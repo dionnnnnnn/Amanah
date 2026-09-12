@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amanah — Soutenir l'aide d'urgence et les personnes en détresse.">
+  <title>Amanah — Aide d'urgence</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2369c98a'/%3E%3Cpath d='M16 34c0-10 8-18 18-18s18 8 18 18-8 18-18 18c-6 0-11-3-14-7' fill='none' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M17 34h15' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --green: #69c98a;
+      --green-dark: #28734b;
+      --green-deep: #173d2a;
+      --green-pale: #eaf7ed;
+      --green-soft: #d9f0df;
+      --mint: #f4fbf5;
+      --ink: #12231a;
+      --muted: #5c6e64;
+      --line: #d7e6dc;
+      --white: #fff;
+      --peach: #f9dfd2;
+      --radius: 22px;
+      --pill: 999px;
+      --shadow: 0 20px 50px rgba(23, 61, 42, .10);
+      --content: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 3px solid #1d6ef2; outline-offset: 4px; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: .75rem;
+      z-index: 20;
+      padding: .65rem 1rem;
+      border-radius: var(--pill);
+      color: var(--white);
+      background: var(--green-deep);
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 230, 220, .9);
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      min-height: 88px;
+      width: min(100% - 2.5rem, var(--content));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--white);
+      background: var(--green);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+    .desktop-nav {
+      display: flex;
+      gap: 1.6rem;
+      margin-left: auto;
+      color: var(--muted);
+      font-size: .93rem;
+      font-weight: 700;
+    }
+    .desktop-nav a { text-decoration: none; }
+    .desktop-nav a:hover { color: var(--green-dark); }
+    .header-actions { display: flex; align-items: center; gap: .65rem; margin-left: 1rem; }
+    .icon-button, .menu-button {
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+    }
+    .icon-button:hover, .menu-button:hover { background: var(--green-pale); }
+    .menu-button { display: none; }
+    .donate-button, .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 48px;
+      padding: .75rem 1.35rem;
+      border: 0;
+      border-radius: var(--pill);
+      color: var(--white);
+      background: var(--green-dark);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(40, 115, 75, .15);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .donate-button:hover, .primary-button:hover { background: var(--green-deep); transform: translateY(-2px); box-shadow: 0 12px 24px rgba(40, 115, 75, .2); }
+    .menu-panel {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: var(--white);
+    }
+    .menu-panel.is-open { display: block; }
+    .menu-list {
+      width: min(100% - 2.5rem, var(--content));
+      margin: 0 auto;
+      padding: .5rem 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .5rem;
+    }
+    .menu-list a { padding: 1rem; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 800; }
+    .menu-list a:hover { color: var(--green-dark); background: var(--green-pale); }
+    .search-panel {
+      display: none;
+      padding: .9rem 1.25rem 1.2rem;
+      border-top: 1px solid var(--line);
+      background: var(--mint);
+    }
+    .search-panel.is-open { display: block; }
+    .search-form { width: min(100%, 640px); margin: 0 auto; display: flex; gap: .6rem; }
+    .search-form input { min-width: 0; flex: 1; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: var(--pill); background: var(--white); }
+
+    .container { width: min(100% - 2.5rem, var(--content)); margin-inline: auto; }
+    .narrow { max-width: 790px; }
+    .section { padding: clamp(4rem, 9vw, 8rem) 0; }
+    .eyebrow { margin: 0 0 .85rem; color: var(--green-dark); font-size: .8rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -.045em; line-height: 1.02; }
+    h1 { max-width: 780px; margin-bottom: 1.4rem; font-size: clamp(3rem, 7vw, 6.8rem); }
+    h2 { margin-bottom: 1.5rem; font-size: clamp(2.25rem, 4.4vw, 4.2rem); }
+    h3 { margin-bottom: .8rem; font-size: 1.35rem; }
+    .lead { max-width: 760px; color: var(--muted); font-size: clamp(1.08rem, 1.7vw, 1.3rem); line-height: 1.65; }
+    .hero { padding-top: 0; }
+    .hero-media { width: 100%; height: min(66vh, 650px); min-height: 400px; overflow: hidden; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+    .hero-copy { padding: clamp(3.5rem, 7vw, 7rem) 0 2rem; }
+
+    .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+    .intro-grid .copy { max-width: 670px; }
+    .stat-note { padding: 1.7rem; border-left: 4px solid var(--green); border-radius: 0 var(--radius) var(--radius) 0; background: var(--green-pale); }
+    .stat-note strong { display: block; margin-bottom: .5rem; font-size: 2.9rem; line-height: 1; letter-spacing: -.06em; }
+
+    .donation-section { padding-top: 1rem; }
+    .donation-card { padding: clamp(1.5rem, 4vw, 3.4rem); border-radius: 32px; background: var(--green-pale); }
+    .donation-card > * { max-width: 680px; margin-inline: auto; }
+    .donation-card h2 { text-align: center; margin-bottom: .9rem; }
+    .donation-card > p { text-align: center; color: var(--muted); }
+    .frequency { display: flex; justify-content: center; gap: .4rem; margin: 1.5rem auto; padding: .3rem; width: fit-content; border: 1px solid var(--line); border-radius: var(--pill); background: rgba(255,255,255,.65); }
+    .frequency button { border: 0; border-radius: var(--pill); padding: .6rem 1rem; color: var(--muted); background: transparent; cursor: pointer; font-weight: 800; }
+    .frequency button.is-active { color: var(--white); background: var(--green-dark); }
+    .amount-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.7rem 0; }
+    .amount { min-height: 150px; position: relative; padding: 1.15rem; text-align: left; border: 1px solid var(--green); border-radius: 8px; color: var(--green-dark); background: var(--white); cursor: pointer; transition: transform .2s ease, background .2s ease, color .2s ease; }
+    .amount:hover { transform: translateY(-3px); }
+    .amount.is-selected { color: var(--white); background: var(--green); }
+    .amount small { display: block; font-size: 1rem; font-weight: 900; }
+    .amount strong { position: absolute; right: 1rem; bottom: .75rem; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -.06em; }
+    .amount.custom { display: flex; flex-direction: column; gap: .6rem; }
+    .amount.custom input { width: 100%; margin-top: auto; padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--white); }
+    .donation-card .primary-button { display: flex; width: fit-content; margin: 0 auto; }
+    .donation-note { margin: 1rem auto 0; text-align: center; color: var(--muted); font-size: .9rem; }
+
+    .field-section { background: var(--mint); }
+    .field-section .section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: end; margin-bottom: 2rem; }
+    .field-section .section-heading p { max-width: 480px; margin-bottom: 0; color: var(--muted); }
+    .field-carousel { position: relative; overflow: hidden; border-radius: 26px; background: var(--green-soft); }
+    .field-slide { display: none; min-height: 540px; position: relative; }
+    .field-slide.is-active { display: block; }
+    .field-slide img { width: 100%; height: 540px; object-fit: cover; }
+    .field-slide-card { position: absolute; left: 7%; bottom: 7%; width: min(470px, 84%); padding: 1.7rem; border-radius: 18px; background: rgba(255,255,255,.95); box-shadow: var(--shadow); }
+    .field-slide-card p { margin-bottom: 0; color: var(--muted); }
+    .carousel-controls { display: flex; justify-content: center; align-items: center; gap: .5rem; padding: 1.2rem; background: var(--green-soft); }
+    .carousel-arrow, .carousel-dot { border: 0; cursor: pointer; }
+    .carousel-arrow { width: 42px; height: 42px; border-radius: 50%; color: var(--green-dark); background: var(--white); }
+    .carousel-dot { width: 12px; height: 12px; padding: 0; border-radius: 50%; background: var(--white); }
+    .carousel-dot.is-active { background: var(--green-dark); }
+
+    .impact-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; }
+    .impact-header p { max-width: 470px; margin-bottom: 1.5rem; color: var(--muted); }
+    .impact-scroller { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 1fr); gap: 1rem; overflow-x: auto; padding: .25rem .25rem 1.25rem; scroll-snap-type: x mandatory; }
+    .impact-card { min-height: 530px; overflow: hidden; scroll-snap-align: start; border-radius: 0; background: var(--peach); }
+    .impact-card img { width: 100%; height: 235px; object-fit: cover; }
+    .impact-body { padding: 1.5rem; }
+    .impact-body h3 { margin-bottom: .8rem; font-size: 2.9rem; }
+    .impact-body p { color: #624f49; }
+    .impact-link { display: inline-flex; align-items: center; gap: .45rem; color: var(--green-dark); font-weight: 900; text-decoration: none; }
+    .impact-link:hover { text-decoration: underline; }
+
+    .list-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2.5rem, 8vw, 8rem); }
+    .bullet-list { margin: 0; padding: 0; list-style: none; }
+    .bullet-list li { position: relative; padding: .65rem 0 .65rem 1.7rem; border-bottom: 1px solid var(--line); }
+    .bullet-list li::before { content: ""; position: absolute; top: 1.2rem; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+
+    .newsletter { padding: 2.2rem; border-radius: 24px; background: #f4f6f4; }
+    .newsletter-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .newsletter h2 { margin-bottom: .7rem; font-size: clamp(2rem, 4vw, 3.5rem); }
+    .newsletter p { max-width: 700px; margin-bottom: 0; color: var(--muted); }
+
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.4rem 0; border: 0; color: var(--ink); background: transparent; text-align: left; font-weight: 900; cursor: pointer; }
+    .faq-plus { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 auto; border: 1px solid var(--green); border-radius: 50%; color: var(--green-dark); font-size: 1.4rem; font-weight: 400; }
+    .faq-answer { display: none; max-width: 720px; padding: 0 4rem 1.5rem 0; color: var(--muted); }
+    .faq-item.is-open .faq-answer { display: block; }
+    .faq-item.is-open .faq-plus { color: var(--white); background: var(--green-dark); }
+
+    .contact-card { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; padding: clamp(2rem, 5vw, 4rem); border-radius: 28px; color: var(--white); background: var(--green-deep); }
+    .contact-card p { max-width: 600px; color: #d9eee0; }
+    .contact-card .primary-button { color: var(--green-deep); background: var(--white); box-shadow: none; }
+    .contact-card .primary-button:hover { background: var(--green-pale); }
+    .contact-person { padding-left: 1.5rem; border-left: 1px solid rgba(255,255,255,.25); }
+    .contact-person strong { display: block; margin-bottom: .2rem; font-size: 1.35rem; }
+    .contact-person a { color: #d9eee0; text-decoration: none; }
+
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .news-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+    .news-card img { width: 100%; height: 190px; object-fit: cover; }
+    .news-body { padding: 1.2rem; }
+    .news-meta { margin-bottom: .6rem; color: var(--green-dark); font-size: .78rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+    .news-body p { color: var(--muted); }
+    .secondary-button { display: inline-flex; min-height: 44px; align-items: center; padding: .6rem 1rem; border: 1px solid var(--green-dark); border-radius: var(--pill); color: var(--green-dark); font-weight: 900; text-decoration: none; }
+    .secondary-button:hover { color: var(--white); background: var(--green-dark); }
+
+    .share-row { display: flex; align-items: center; gap: .75rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+    .share-row span { margin-right: .4rem; font-weight: 900; }
+    .share-link { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: var(--green-dark); background: var(--green-pale); text-decoration: none; font-weight: 900; }
+    .share-link:hover { color: var(--white); background: var(--green-dark); }
+
+    .site-footer { padding: 4rem 0 2rem; color: #dceee2; background: var(--green-deep); }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 2rem; }
+    .footer-brand { color: var(--white); }
+    .footer-title { margin: 0 0 .8rem; color: var(--white); font-size: 1rem; }
+    .footer-links { display: grid; gap: .45rem; }
+    .footer-links a { color: #dceee2; text-decoration: none; }
+    .footer-links a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 2rem; margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,.2); color: #b6d1bf; font-size: .9rem; }
+
+    .toast { position: fixed; left: 50%; bottom: 1.5rem; z-index: 30; padding: .85rem 1.15rem; border-radius: var(--pill); color: var(--white); background: var(--green-deep); box-shadow: var(--shadow); transform: translate(-50%, 180%); transition: transform .25s ease; }
+    .toast.is-visible { transform: translate(-50%, 0); }
+
+    @media (max-width: 900px) {
+      .desktop-nav { display: none; }
+      .menu-button { display: inline-grid; }
+      .header-actions { margin-left: auto; }
+      .menu-list { grid-template-columns: repeat(2, 1fr); }
+      .intro-grid, .list-layout, .contact-card { grid-template-columns: 1fr; }
+      .contact-person { padding: 1.2rem 0 0; border-top: 1px solid rgba(255,255,255,.25); border-left: 0; }
+      .news-grid { grid-template-columns: 1fr; }
+      .newsletter-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .header-inner, .container, .menu-list { width: min(100% - 1.25rem, var(--content)); }
+      .header-inner { min-height: 72px; gap: .35rem; }
+      .brand { font-size: 1.15rem; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 11px; }
+      .donate-button { min-height: 42px; padding: .6rem .85rem; font-size: .86rem; }
+      .icon-button, .menu-button { width: 40px; height: 40px; }
+      .hero-media { min-height: 300px; height: 48vh; }
+      h1 { font-size: clamp(2.6rem, 14vw, 4.5rem); }
+      h2 { font-size: clamp(2.2rem, 11vw, 3.8rem); }
+      .amount-grid { grid-template-columns: repeat(2, 1fr); gap: .65rem; }
+      .amount { min-height: 120px; }
+      .amount strong { font-size: 2.7rem; }
+      .field-slide, .field-slide img { min-height: 500px; height: 500px; }
+      .field-slide-card { left: 5%; bottom: 5%; width: 90%; padding: 1.1rem; }
+      .field-section .section-heading, .impact-header { display: block; }
+      .newsletter { padding: 1.35rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { display: block; }
+      .footer-bottom span { display: block; margin-top: .4rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Amanah, accueil">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>Amanah</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#about">Notre mission</a>
+        <a href="#field">Sur le terrain</a>
+        <a href="#impact">Votre aide</a>
+        <a href="#faq">Questions</a>
+      </nav>
+      <div class="header-actions">
+        <a class="donate-button" href="#donate"><span aria-hidden="true">♡</span> Faire un don</a>
+        <button class="icon-button" id="search-toggle" type="button" aria-expanded="false" aria-controls="search-panel" aria-label="Ouvrir la recherche">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7.5"></circle><path d="m17 17 4 4"></path></svg>
+        </button>
+        <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Ouvrir le menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="search-panel" id="search-panel" hidden>
+      <form class="search-form" id="search-form">
+        <label class="sr-only" for="search-input">Rechercher sur Amanah</label>
+        <input id="search-input" type="search" placeholder="Rechercher sur Amanah…">
+        <button class="primary-button" type="submit">Rechercher</button>
+      </form>
+    </div>
+    <div class="menu-panel" id="menu-panel" hidden>
+      <nav class="menu-list" aria-label="Menu mobile">
+        <a href="#about">Notre mission</a>
+        <a href="#donate">Aidez-nous</a>
+        <a href="#field">Notre engagement</a>
+        <a href="#contact">À propos d’Amanah</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img src="https://static.wixstatic.com/media/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_85/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg" alt="Des bénévoles distribuent des repas à une communauté.">
+      </div>
+      <div class="container hero-copy">
+        <p class="eyebrow">Amanah · Agir avec confiance</p>
+        <h1 id="hero-title">Soutenir l’aide en cas de catastrophe</h1>
+        <p class="lead">Quand une crise survient, Amanah aide rapidement les personnes qui se retrouvent dans l’impasse. Votre don rend possibles l’eau potable, la nourriture, les hébergements d’urgence et les soins essentiels.</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container intro-grid">
+        <div class="copy">
+          <p class="eyebrow">Notre mission</p>
+          <h2>Une aide concrète, au moment où elle compte.</h2>
+          <p class="lead">Amanah travaille avec des équipes locales et des partenaires de confiance pour répondre aux crises, soutenir les familles et renforcer la prévention des catastrophes.</p>
+        </div>
+        <aside class="stat-note">
+          <strong>24/7</strong>
+          <p>Des équipes mobilisables pour évaluer les besoins, coordonner les secours et accompagner les personnes touchées.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section donation-section" id="donate" aria-labelledby="donation-title">
+      <div class="container">
+        <div class="donation-card">
+          <p class="eyebrow">Votre don</p>
+          <h2 id="donation-title">Aide rapide en cas d’urgence</h2>
+          <p>Grâce à votre soutien, nous apportons une aide efficace aux personnes touchées par les crises et les catastrophes.</p>
+          <div class="frequency" role="group" aria-label="Fréquence du don">
+            <button class="is-active" type="button" data-frequency="unique">Unique</button>
+            <button type="button" data-frequency="mensuel">Mensuel</button>
+            <button type="button" data-frequency="annuel">Annuel</button>
+          </div>
+          <div class="amount-grid" role="group" aria-label="Choisir un montant">
+            <button class="amount" type="button" data-amount="50"><small>CHF</small><strong>50</strong></button>
+            <button class="amount is-selected" type="button" data-amount="150"><small>CHF</small><strong>150</strong></button>
+            <button class="amount" type="button" data-amount="250"><small>CHF</small><strong>250</strong></button>
+            <label class="amount custom"><small>CHF</small><input id="custom-amount" type="number" min="1" placeholder="Montant libre" aria-label="Montant libre en francs suisses"></label>
+          </div>
+          <button class="primary-button" id="donate-action" type="button"><span aria-hidden="true">♡</span> Faire un don</button>
+          <p class="donation-note" id="donation-note">Don unique de 150 CHF</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section field-section" id="field" aria-labelledby="field-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">Sur le terrain</p><h2 id="field-title">Amanah en action</h2></div>
+          <p>Des réponses rapides, coordonnées avec les communautés qui connaissent le mieux leurs besoins.</p>
+        </div>
+        <div class="field-carousel" aria-roledescription="carrousel" aria-label="Histoires sur le terrain">
+          <article class="field-slide is-active" data-slide="0">
+            <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/10/22/thumbs_b_c_2b4bb52bbd55a711d9429b4d5a6cc756.jpg?v=125832" alt="Des équipes de secours interviennent dans les décombres d’un bâtiment.">
+            <div class="field-slide-card"><h3>Répondre dans l’urgence</h3><p>Les équipes évaluent les dégâts, soutiennent les opérations de recherche et mettent en place les premières distributions.</p></div>
+          </article>
+          <article class="field-slide" data-slide="1">
+            <img src="https://images-production.thebiggive.org.uk/0011r00002K4TU2AAN/CCampaign%20Additional/67d7d9a5-fb0b-489c-a6e7-7baa5f527881.jpg?format=webp&width=1200" alt="Des bénévoles distribuent des produits frais à des familles.">
+            <div class="field-slide-card"><h3>Protéger la dignité</h3><p>Distribuer une aide utile, accessible et respectueuse pour permettre aux familles de traverser les premiers jours.</p></div>
+          </article>
+          <article class="field-slide" data-slide="2">
+            <img src="https://storage1.snappages.site/XB2ND9/assets/images/2140903_720x960_500.jpg" alt="Des bénévoles organisent une distribution de produits essentiels.">
+            <div class="field-slide-card"><h3>Construire la résilience</h3><p>Prévenir les risques et renforcer les réseaux locaux afin que l’aide continue après la première urgence.</p></div>
+          </article>
+          <div class="carousel-controls">
+            <button class="carousel-arrow" id="slide-prev" type="button" aria-label="Diapositive précédente">‹</button>
+            <button class="carousel-dot is-active" type="button" data-dot="0" aria-label="Afficher la diapositive 1"></button>
+            <button class="carousel-dot" type="button" data-dot="1" aria-label="Afficher la diapositive 2"></button>
+            <button class="carousel-dot" type="button" data-dot="2" aria-label="Afficher la diapositive 3"></button>
+            <button class="carousel-arrow" id="slide-next" type="button" aria-label="Diapositive suivante">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="impact-header"><div><p class="eyebrow">L’impact de votre geste</p><h2 id="impact-title">Votre aide fait la différence</h2></div><p>Chaque contribution permet de transformer une intention solidaire en action visible.</p></div>
+        <div class="impact-scroller">
+          <article class="impact-card"><img src="https://images-production.thebiggive.org.uk/0011r00002K4TU2AAN/CCampaign%20Additional/67d7d9a5-fb0b-489c-a6e7-7baa5f527881.jpg?format=webp&width=850" alt="Un enfant reçoit une aide alimentaire."><div class="impact-body"><h3>50 CHF</h3><p>Vous contribuez à maintenir les équipes prêtes à agir et à fournir les premières ressources aux personnes les plus vulnérables.</p><a class="impact-link" href="#donate">Choisir ce montant <span aria-hidden="true">→</span></a></div></article>
+          <article class="impact-card"><img src="https://static.wixstatic.com/media/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg" alt="Une distribution de repas organisée par des bénévoles."><div class="impact-body"><h3>150 CHF</h3><p>Vous aidez une famille à recevoir de l’eau, de la nourriture et un abri provisoire dans les premiers jours.</p><a class="impact-link" href="#donate">Choisir ce montant <span aria-hidden="true">→</span></a></div></article>
+          <article class="impact-card"><img src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/10/22/thumbs_b_c_2b4bb52bbd55a711d9429b4d5a6cc756.jpg?v=125832" alt="Des secouristes coordonnent une intervention."><div class="impact-body"><h3>250 CHF</h3><p>Vous soutenez la reconstruction et redonnez de la stabilité à celles et ceux qui ont tout perdu.</p><a class="impact-link" href="#donate">Choisir ce montant <span aria-hidden="true">→</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section field-section" aria-labelledby="use-title">
+      <div class="container list-layout">
+        <div><p class="eyebrow">Transparence</p><h2 id="use-title">Comment Amanah utilise les dons</h2></div>
+        <ul class="bullet-list">
+          <li>Distribuer rapidement de l’eau potable et de la nourriture.</li>
+          <li>Mettre en place des hébergements d’urgence.</li>
+          <li>Organiser des postes de soins et de réhydratation.</li>
+          <li>Prévenir la propagation des maladies transmissibles.</li>
+          <li>Apporter une aide financière ponctuelle aux familles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="newsletter">
+          <div class="newsletter-inner"><div><p class="eyebrow">Rester informé</p><h2 id="newsletter-title">Recevoir les nouvelles d’Amanah</h2><p>Découvrez les actions menées avec les communautés et les façons de contribuer à un avenir plus solidaire.</p></div><button class="primary-button" id="newsletter-action" type="button">S’abonner à la newsletter</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2 id="faq-title">Vos questions sur les dons</h2>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Comment faire un don ?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer"><p>Choisissez un montant et une fréquence dans le module de don. Le bouton vous guidera ensuite vers le parcours de paiement sécurisé.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>À qui mes dons bénéficient-ils ?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer"><p>Les dons financent les actions d’urgence, l’accompagnement des familles et la prévention, en lien avec des partenaires locaux de confiance.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Les dons sont-ils déductibles des impôts ?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer"><p>La déductibilité dépend de votre lieu de résidence et des règles locales. Consultez les informations fiscales applicables à votre situation.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Quels sont les frais de transaction ?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="faq-answer"><p>Les éventuels frais sont indiqués de manière transparente avant la validation du paiement.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div><p class="eyebrow" style="color:#b9e7c8">Une question ?</p><h2>Nous sommes là pour vous répondre.</h2><p>Notre équipe donateurs vous accompagne avec clarté, que vous souhaitiez soutenir une urgence ou en savoir plus sur nos actions.</p><a class="primary-button" href="mailto:bonjour@amanah.example">Contactez-nous</a></div>
+          <div class="contact-person"><strong>Équipe Amanah</strong><span>Service donateurs</span><br><a href="tel:+41000000000">+41 00 000 00 00</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="news-title">
+      <div class="container">
+        <p class="eyebrow">Histoires et nouvelles</p><h2 id="news-title">Amanah sur le terrain</h2>
+        <div class="news-grid">
+          <article class="news-card"><img src="https://storage1.snappages.site/XB2ND9/assets/images/2140903_720x960_500.jpg" alt="Des produits essentiels préparés pour une distribution."><div class="news-body"><p class="news-meta">Récit · 04.09.2026</p><h3>Préparer les communautés avant la prochaine crise</h3><p>Des bénévoles renforcent les réseaux locaux et partagent des gestes simples de prévention.</p><a class="secondary-button" href="#">Lire la suite</a></div></article>
+          <article class="news-card"><img src="https://static.wixstatic.com/media/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85/406c48_1778d6d9e5924cd9a23d9d1b6182debb~mv2.jpg" alt="Une équipe distribue des repas à une communauté."><div class="news-body"><p class="news-meta">Aide d’urgence · 26.08.2026</p><h3>Quand chaque distribution compte</h3><p>Une organisation précise permet de répondre vite tout en respectant les besoins de chaque famille.</p><a class="secondary-button" href="#">Lire la suite</a></div></article>
+          <article class="news-card"><img src="https://cdnuploads.aa.com.tr/uploads/Contents/2022/10/22/thumbs_b_c_2b4bb52bbd55a711d9429b4d5a6cc756.jpg?v=125832" alt="Une équipe de secours intervient sur un site sinistré."><div class="news-body"><p class="news-meta">Intervention · 11.08.2026</p><h3>Coordonner les secours après un séisme</h3><p>Sur le terrain, les équipes s’unissent pour retrouver les personnes et sécuriser les premières heures.</p><a class="secondary-button" href="#">Lire la suite</a></div></article>
+        </div>
+        <div class="share-row" aria-label="Partager cette page"><span>Partager cette page</span><a class="share-link" href="#" aria-label="Partager sur X">X</a><a class="share-link" href="#" aria-label="Partager sur Facebook">f</a><a class="share-link" href="#" aria-label="Partager sur LinkedIn">in</a><a class="share-link" href="mailto:?subject=Amanah" aria-label="Partager par e-mail">@</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a class="brand footer-brand" href="#top"><span class="brand-mark">A</span><span>Amanah</span></a><p style="margin-top:1rem;max-width:290px">Agir avec confiance pour un monde plus humain.</p></div>
+        <div><h3 class="footer-title">Faire un don</h3><div class="footer-links"><a href="#donate">Don ponctuel</a><a href="#donate">Don mensuel</a><a href="#donate">Transparence</a></div></div>
+        <div><h3 class="footer-title">Amanah</h3><div class="footer-links"><a href="#about">Notre mission</a><a href="#field">Nos actions</a><a href="#contact">Contact</a><a href="#faq">Questions fréquentes</a></div></div>
+        <div><h3 class="footer-title">Suivez-nous</h3><div class="footer-links"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Préférences cookies</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Amanah</span><span>Votre confiance guide chaque action.</span></div>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+    function setPanel(button, panel, open, labelOpen, labelClosed) {
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? labelOpen : labelClosed);
+      panel.hidden = !open;
+      panel.classList.toggle('is-open', open);
+    }
+
+    const menuToggle = $('#menu-toggle');
+    const menuPanel = $('#menu-panel');
+    const searchToggle = $('#search-toggle');
+    const searchPanel = $('#search-panel');
+    menuToggle.addEventListener('click', () => setPanel(menuToggle, menuPanel, menuPanel.hidden, 'Fermer le menu', 'Ouvrir le menu'));
+    searchToggle.addEventListener('click', () => {
+      const open = searchPanel.hidden;
+      setPanel(searchToggle, searchPanel, open, 'Fermer la recherche', 'Ouvrir la recherche');
+      if (open) $('#search-input').focus();
+    });
+    $$('.menu-list a').forEach(link => link.addEventListener('click', () => setPanel(menuToggle, menuPanel, false, 'Fermer le menu', 'Ouvrir le menu')));
+
+    const toast = $('#toast');
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove('is-visible'), 3200);
+    }
+    $('#search-form').addEventListener('submit', event => { event.preventDefault(); showToast('La recherche Amanah sera bientôt disponible.'); });
+    $('#newsletter-action').addEventListener('click', () => showToast('Merci — l’inscription à la newsletter sera bientôt disponible.'));
+
+    let frequency = 'unique';
+    let amount = '150';
+    $$('.frequency button').forEach(button => button.addEventListener('click', () => {
+      $$('.frequency button').forEach(item => item.classList.remove('is-active'));
+      button.classList.add('is-active');
+      frequency = button.dataset.frequency;
+      updateDonationNote();
+    }));
+    $$('.amount[data-amount]').forEach(button => button.addEventListener('click', () => {
+      $$('.amount[data-amount]').forEach(item => item.classList.remove('is-selected'));
+      button.classList.add('is-selected');
+      amount = button.dataset.amount;
+      $('#custom-amount').value = '';
+      updateDonationNote();
+    }));
+    $('#custom-amount').addEventListener('input', event => {
+      if (event.target.value) {
+        $$('.amount[data-amount]').forEach(item => item.classList.remove('is-selected'));
+        amount = event.target.value;
+        updateDonationNote();
+      }
+    });
+    function updateDonationNote() {
+      const frequencyLabel = frequency === 'unique' ? 'unique' : frequency;
+      $('#donation-note').textContent = `Don ${frequencyLabel} de ${amount || '—'} CHF`;
+    }
+    $('#donate-action').addEventListener('click', () => showToast(`Merci pour votre intention de don de ${amount || '—'} CHF.`));
+
+    let activeSlide = 0;
+    const slides = $$('.field-slide');
+    const dots = $$('.carousel-dot');
+    function showSlide(index) {
+      activeSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === activeSlide));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === activeSlide));
+    }
+    $('#slide-prev').addEventListener('click', () => showSlide(activeSlide - 1));
+    $('#slide-next').addEventListener('click', () => showSlide(activeSlide + 1));
+    dots.forEach((dot, index) => dot.addEventListener('click', () => showSlide(index)));
+
+    $$('.faq-question').forEach(button => button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const open = item.classList.toggle('is-open');
+      button.setAttribute('aria-expanded', String(open));
+      button.querySelector('.faq-plus').textContent = open ? '−' : '+';
+    }));
+  </script>
+</body>
+</html>
