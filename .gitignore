@@ -1,0 +1,10 @@
+# Agent and assistant-local files
+.claude-flow/
+.codex/
+.agents/
+
+# Common local environment files
+.env
+.env.*
+!.env.example
+
