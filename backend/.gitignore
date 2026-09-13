@@ -1,0 +1,6 @@
+.env
+storage/*.sqlite
+storage/*.sqlite-*
+storage/private/
+storage/logs/
+vendor/
