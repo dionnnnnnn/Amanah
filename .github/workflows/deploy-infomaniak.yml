@@ -90,7 +90,7 @@ jobs:
             --exclude='backend/tests/' \
             --exclude='backend/.env' \
             --exclude='backend/storage/' \
-            "$staging_dir/" "$target_dir/"
+            "$staging_dir/public/" "$target_dir/"
           rm -rf "$staging_dir"
           printf 'Déploiement Amanah %s terminé.\n' "$deploy_sha"
           REMOTE
