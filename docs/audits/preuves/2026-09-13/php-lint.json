@@ -1,0 +1,112 @@
+[
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\bin\\create-admin.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\bin\\create-admin.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\bin\\seed.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\bin\\seed.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\config\\app.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\config\\app.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\public\\index.php",
+    "exit": 0,
+    "output": "\nWarning: The use statement with non-compound name 'InvalidArgumentException' has no effect in C:\\Users\\diplk\\Documents\\amanah\\backend\\public\\index.php on line 17\n\nWarning: The use statement with non-compound name 'Throwable' has no effect in C:\\Users\\diplk\\Documents\\amanah\\backend\\public\\index.php on line 18\nNo syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\public\\index.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\bootstrap.php",
+    "exit": 0,
+    "output": "\nWarning: The use statement with non-compound name 'PDO' has no effect in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\bootstrap.php on line 6\nNo syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\bootstrap.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Domain\\Money.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Domain\\Money.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Http\\Request.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Http\\Request.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Http\\Response.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Http\\Response.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Infrastructure\\Database.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Infrastructure\\Database.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\Csrf.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\Csrf.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\RateLimiter.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\RateLimiter.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\Totp.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Security\\Totp.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\AdminAuthService.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\AdminAuthService.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\CommunicationService.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\CommunicationService.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\DonationService.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\DonationService.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\JobRunner.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\JobRunner.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\PaymentGateway.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\PaymentGateway.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\RefundService.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\RefundService.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\WebhookService.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Services\\WebhookService.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Support\\Clock.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Support\\Clock.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Support\\Uuid.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\src\\Support\\Uuid.php"
+  },
+  {
+    "file": "C:\\Users\\diplk\\Documents\\amanah\\backend\\tests\\SmokeTest.php",
+    "exit": 0,
+    "output": "No syntax errors detected in C:\\Users\\diplk\\Documents\\amanah\\backend\\tests\\SmokeTest.php"
+  }
+]

@@ -1,0 +1,1218 @@
+{
+  "browser": "152.0.7977.83",
+  "files": [
+    "404.html",
+    "actualites.html",
+    "association.html",
+    "conditions-des-dons.html",
+    "confidentialite.html",
+    "contact.html",
+    "don-annulation.html",
+    "don-retour.html",
+    "faire-un-don.html",
+    "faq.html",
+    "index.html",
+    "mentions-legales.html",
+    "projets.html",
+    "transparence.html"
+  ],
+  "checks": [
+    {
+      "file": "404.html",
+      "width": 320,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 375,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 768,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 980,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "404.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Page introuvable — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "actualites.html",
+      "width": 320,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "actualites.html",
+      "width": 375,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "actualites.html",
+      "width": 768,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "actualites.html",
+      "width": 980,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "actualites.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "actualites.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "actualites.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Actualités — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "association.html",
+      "width": 320,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "association.html",
+      "width": 375,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "association.html",
+      "width": 768,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "association.html",
+      "width": 980,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "association.html",
+      "width": 1024,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "association.html",
+      "width": 1280,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "association.html",
+      "width": 1440,
+      "status": 200,
+      "title": "L'association — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 320,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 375,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 768,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 980,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Conditions des dons — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 320,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 375,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 768,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 980,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "confidentialite.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Confidentialité — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "contact.html",
+      "width": 320,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "contact.html",
+      "width": 375,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "contact.html",
+      "width": 768,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "contact.html",
+      "width": 980,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "contact.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "contact.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "contact.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Contact — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 320,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 375,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 768,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 980,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "don-annulation.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Don interrompu — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 320,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 375,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 768,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 980,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 1024,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 1280,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "don-retour.html",
+      "width": 1440,
+      "status": 200,
+      "title": "État du don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 320,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 375,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 768,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 980,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Faire un don — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "faq.html",
+      "width": 320,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "faq.html",
+      "width": 375,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "faq.html",
+      "width": 768,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "faq.html",
+      "width": 980,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "faq.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "faq.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "faq.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Questions fréquentes — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 320,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "width": 375,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "width": 768,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 980,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Amanah — Aide humanitaire",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 320,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 375,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 768,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 980,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Mentions légales — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "projets.html",
+      "width": 320,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "projets.html",
+      "width": 375,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "projets.html",
+      "width": 768,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "projets.html",
+      "width": 980,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "projets.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "projets.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "projets.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Projets — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    },
+    {
+      "file": "transparence.html",
+      "width": 320,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "transparence.html",
+      "width": 375,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 375,
+      "viewport": 375,
+      "overflow": [
+        {
+          "tag": "IMG",
+          "cls": "",
+          "text": ""
+        }
+      ]
+    },
+    {
+      "file": "transparence.html",
+      "width": 768,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "overflow": []
+    },
+    {
+      "file": "transparence.html",
+      "width": 980,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 980,
+      "viewport": 980,
+      "overflow": []
+    },
+    {
+      "file": "transparence.html",
+      "width": 1024,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 1024,
+      "viewport": 1024,
+      "overflow": []
+    },
+    {
+      "file": "transparence.html",
+      "width": 1280,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "overflow": []
+    },
+    {
+      "file": "transparence.html",
+      "width": 1440,
+      "status": 200,
+      "title": "Transparence — Amanah",
+      "h1": 1,
+      "scrollWidth": 1440,
+      "viewport": 1440,
+      "overflow": []
+    }
+  ],
+  "errors": [],
+  "menuOpened": true,
+  "menuClosed": true,
+  "focusRestored": true,
+  "faqOpened": "",
+  "amounts": [
+    {
+      "value": "1.10",
+      "status": "Saisissez au maximum deux décimales.",
+      "nativeValidity": true,
+      "summary": "1,1 CHF"
+    },
+    {
+      "value": "4.10",
+      "status": "Saisissez au maximum deux décimales.",
+      "nativeValidity": true,
+      "summary": "4,1 CHF"
+    },
+    {
+      "value": "10.01",
+      "status": "Le formulaire frontend est valide. Aucun paiement n’a été lancé : la connexion sécurisée au prestataire relève du backend.",
+      "nativeValidity": true,
+      "summary": "10,01 CHF"
+    },
+    {
+      "value": "150.50",
+      "status": "Le formulaire frontend est valide. Aucun paiement n’a été lancé : la connexion sécurisée au prestataire relève du backend.",
+      "nativeValidity": true,
+      "summary": "150,5 CHF"
+    },
+    {
+      "value": "0.50",
+      "status": "Le formulaire frontend est valide. Aucun paiement n’a été lancé : la connexion sécurisée au prestataire relève du backend.",
+      "nativeValidity": false,
+      "summary": "0,5 CHF"
+    },
+    {
+      "value": "0",
+      "status": "Choisissez un montant positif pour continuer.",
+      "nativeValidity": false,
+      "summary": "À choisir"
+    },
+    {
+      "value": "-1",
+      "status": "Choisissez un montant positif pour continuer.",
+      "nativeValidity": false,
+      "summary": "À choisir"
+    },
+    {
+      "value": "1.001",
+      "status": "Saisissez au maximum deux décimales.",
+      "nativeValidity": false,
+      "summary": "1 CHF"
+    },
+    {
+      "value": "1000000000",
+      "status": "Le formulaire frontend est valide. Aucun paiement n’a été lancé : la connexion sécurisée au prestataire relève du backend.",
+      "nativeValidity": true,
+      "summary": "1 000 000 000 CHF"
+    },
+    {
+      "value": "",
+      "status": "Choisissez un montant positif pour continuer.",
+      "nativeValidity": true,
+      "summary": "À choisir"
+    }
+  ],
+  "darkText": {
+    "text": "Récapitulatif",
+    "color": "rgb(101, 114, 94)",
+    "background": "rgb(36, 50, 41)"
+  },
+  "queryState": {
+    "custom": "80",
+    "checked": [
+      "150"
+    ],
+    "summary": "80 CHF"
+  },
+  "contact": {
+    "status": "Le formulaire est prêt côté interface. Aucun message n’a été envoyé tant que le backend et l’adresse officielle ne sont pas configurés.",
+    "requestsAfterSubmit": []
+  },
+  "nojsContactUrl": "http://127.0.0.1:8765/contact.html?name=Audit+fictif&email=audit%40example.invalid&subject=Demande+g%C3%A9n%C3%A9rale&message=Message+fictif+audit+sans+JavaScript.",
+  "donationSubmitNetwork": []
+}

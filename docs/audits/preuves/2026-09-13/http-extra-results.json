@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/",
+    "status": 404,
+    "body": "{\"error\":\"Route introuvable.\"}"
+  },
+  {
+    "path": "/admin",
+    "status": 404,
+    "body": "{\"error\":\"Route introuvable.\"}"
+  },
+  {
+    "path": "/projets",
+    "status": 404,
+    "body": "{\"error\":\"Route introuvable.\"}"
+  },
+  {
+    "path": "/newsletter/confirmer/0000000000000000000000000000000000000000000000000000000000000000",
+    "status": 200,
+    "body": "{\"message\":\"Confirmez votre inscription avec une requête POST.\"}"
+  },
+  {
+    "path": "/internal/jobs/run",
+    "status": 401,
+    "body": "{\"error\":\"Non autorisé.\"}"
+  }
+]

@@ -1,0 +1,722 @@
+{
+  "pages": [
+    {
+      "file": "404.html",
+      "text": "ERREUR 404\n\nCette page n'existe pas.\n\nLe lien a peut-être changé, ou le contenu n'est pas encore publié.\n\nRetour à l'accueil\nVoir les projets",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "index.html",
+        "projets.html"
+      ],
+      "canonical": null,
+      "robots": "noindex",
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "actualites.html",
+      "text": "Accueil\nActualités\n\nSUIVRE LES ACTIONS\n\nDes nouvelles avec leur contexte.\n\nLes publications relieront les informations à un projet, une date, un auteur et des médias autorisés.\n\n✦\n\nRÉDACTION EN PRÉPARATION\n\nLes premières actualités réelles seront publiées ici.\n\nAucun récit daté ou résultat n'a été inventé pour remplir la maquette. Le futur flux sera alimenté depuis l'administration.\n\nDécouvrir l'espace projets\n\nCHARTE ÉDITORIALE\n\nUne information utile et traçable.\nDatée\n\nDate de publication et, si différente, période réelle de l'action décrite.\n\nCréditée\n\nAuteur, provenance des médias, légende et autorisations nécessaires.\n\nReliée\n\nLien vers le projet concerné et distinction claire entre objectif et résultat.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "projets.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "association.html",
+      "text": "Accueil\nL'association\n\nQUI SOMMES-NOUS ?\n\nUne association à présenter avec précision.\n\nCette page pose le cadre éditorial de l'association sans inventer son histoire, ses responsables ni ses partenaires.\n\nNOTRE RAISON D'ÊTRE\n\nMettre la dignité au cœur de l'action.\n\nAmanah porte une identité tournée vers le soin, l'accompagnement et la solidarité. Sa mission exacte et ses zones d'intervention seront publiées ici après validation officielle.\n\nLes principes de présentation\n\nLe site est conçu pour que chaque affirmation importante puisse être comprise et vérifiée. Les contenus futurs distingueront clairement les engagements, les actions en cours et les résultats effectivement observés.\n\n01\nUn besoin documenté\n\nPrésenter le contexte public, les personnes concernées et la source des informations.\n\n02\nUne réponse définie\n\nExpliquer le périmètre de l'action, ses responsables, ses dates et son statut opérationnel.\n\n03\nUn suivi accessible\n\nPartager des nouvelles datées ainsi que la méthode utilisée pour rendre compte des ressources.\n\nGouvernance et équipe\n◎\nInformations officielles à fournir\n\nLa composition de l'organe dirigeant, les rôles, les responsables éditoriaux et les coordonnées seront ajoutés dès leur validation par Amanah.\n\nPartenaires\n\nAucun partenaire n'est affiché sans accord et sans relation vérifiable avec l'association. Cette rubrique accueillera, le cas échéant, leur rôle précis plutôt qu'une simple rangée de logos.\n\nSUR CETTE PAGE\n\nPrincipes\nGouvernance et équipe\nPartenaires\nContacter Amanah",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "#principes",
+        "#gouvernance",
+        "#partenaires",
+        "contact.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "conditions-des-dons.html",
+      "text": "Accueil\nConditions des dons\n\nCADRE DU DON\n\nDes conditions à valider avant l'ouverture.\n\nCette page structure les informations attendues. Elle ne constitue pas encore un texte contractuel approuvé.\n\nDocument de préproduction. L'identité légale, le prestataire, les frais et les politiques doivent être confirmés par Amanah.\nAffectation\n\nLe donateur doit connaître avant paiement la destination choisie : fonds général ou projet déterminé. Les règles applicables à un projet terminé ou à un objectif dépassé seront décrites sans autoriser de réaffectation silencieuse.\n\nPaiement et confirmation\n\nLe paiement sera traité sur une page hébergée par un prestataire spécialisé. Seule une confirmation vérifiée côté serveur permettra de considérer le don comme confirmé.\n\nAnnulation et remboursement\n\nLa politique, les délais, les cas admis et le canal de demande restent à faire valider. Une interruption avant paiement mènera vers une page claire permettant de reprendre le parcours.\n\nDons récurrents\n\nIls ne seront proposés qu'après validation des échéances, échecs, reprises et modalités de résiliation. Le frontend actuel n'affiche que le don ponctuel.\n\nSOMMAIRE\n\nAffectation\nPaiement\nRemboursement\nRécurrence",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "#affectation",
+        "#paiement",
+        "#remboursement",
+        "#recurrent",
+        "projets.html",
+        "association.html",
+        "faq.html",
+        "transparence.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "confidentialite.html",
+      "text": "Accueil\nConfidentialité\n\nVOS DONNÉES\n\nCollecter le strict nécessaire.\n\nCette structure devra être complétée à partir des traitements et prestataires réellement utilisés.\n\nInformation à finaliser. Aucun formulaire de cette maquette ne transmet de données.\nResponsable et contact\n\nL'identité du responsable du traitement et le canal d'exercice des droits doivent être confirmés.\n\nDonnées et finalités\n\nLe futur parcours pourra traiter les coordonnées nécessaires au paiement, à la confirmation du don et à la réponse aux demandes. La newsletter, si elle est activée, reposera sur un consentement séparé et facultatif.\n\nPrestataires et conservation\n\nLe prestataire de paiement, l'hébergeur, le service d'e-mail et leurs rôles seront nommés ici. Les durées de conservation seront définies par finalité et obligation applicable.\n\nVos droits\n\nLes droits applicables, la manière de les exercer et l'autorité compétente seront précisés après validation juridique.\n\nCookies\n\nAucun outil de mesure ou traceur marketing n'est intégré dans ce frontend. Une gestion du consentement ne sera ajoutée que si des services non essentiels la rendent nécessaire.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "index.html",
+        "contact.html",
+        "mentions-legales.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "contact.html",
+      "text": "Accueil\nContact\n\nNOUS ÉCRIRE\n\nParlons de votre demande.\n\nL'adresse, le téléphone et les délais de réponse officiels seront affichés après validation par Amanah.\n\nFormulaire de démonstration. Il vérifie l'ergonomie et les erreurs, mais n'envoie aucune donnée sans backend.\nNom\nAdresse e-mail\nObjet\nChoisir un objet\nQuestion sur un don\nQuestion sur un projet\nDemande générale\nMessage\nNe partagez aucune donnée bancaire ou médicale.\nJ'ai lu l'information relative à la confidentialité.\nVérifier mon message\n\nCOORDONNÉES\n\nInformations à confirmer\n\nL'identité légale, l'adresse postale, l'e-mail officiel et un éventuel téléphone doivent être fournis par l'association avant mise en ligne.\n\nAucun réseau social n'est affiché tant qu'un compte actif et officiel n'a pas été validé.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "confidentialite.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": [
+        {
+          "action": null,
+          "method": null
+        }
+      ]
+    },
+    {
+      "file": "don-annulation.html",
+      "text": "↶\n\nPARCOURS INTERROMPU\n\nAucun don n'a été confirmé.\n\nVous pouvez reprendre votre choix. Aucun message alarmant et aucune ambiguïté ne doivent laisser croire qu'un paiement a abouti.\n\nReprendre mon don\nRetour à l'accueil",
+      "images": [],
+      "links": [
+        "faire-un-don.html",
+        "index.html"
+      ],
+      "canonical": null,
+      "robots": "noindex",
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "don-retour.html",
+      "text": "…\n\nVÉRIFICATION EN COURS\n\nNous vérifions l'état de votre don.\n\nLe retour du prestataire ne suffit pas à confirmer un paiement. Cette page attendra toujours la confirmation sécurisée du serveur.\n\nDans cette version frontend, aucun paiement n'a eu lieu et aucun état réel n'est consulté.\nRetour à l'accueil\nBesoin d'aide ?",
+      "images": [],
+      "links": [
+        "index.html",
+        "contact.html"
+      ],
+      "canonical": null,
+      "robots": "noindex",
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "faire-un-don.html",
+      "text": "Accueil\nFaire un don\n\nVOTRE SOUTIEN\n\nPréparer un don en toute clarté.\n\nChoisissez l'affectation, la fréquence et le montant. Le récapitulatif reste visible avant tout futur paiement.\n\nPrototype frontend. Ce parcours valide l'interface uniquement. Il ne collecte, n'enregistre et ne transmet aucune donnée, et ne déclenche aucun paiement.\n1. Votre don\n2. Vos coordonnées\n3. Paiement externe\n4. Confirmation\n1. Affectation\n\nLe fonds général est proposé tant qu'aucun projet n'est publié.\n\nJe souhaite soutenir\nLe fonds général d'Amanah\nLa politique d'affectation doit être validée avant l'ouverture des dons.\n2. Fréquence\n\nLe don ponctuel est la seule option prévue au lancement.\n\nPonctuel\n3. Montant\n\nChoisissez un repère ou saisissez librement un montant en CHF.\n\nMontant du don\n50 CHF\n150 CHF\n250 CHF\nAutre montant en CHF\nMontant positif, avec deux décimales au maximum.\n4. Consentement futur\n\nLa newsletter restera toujours facultative et indépendante du don.\n\nJe souhaiterais recevoir les nouvelles d'Amanah lorsque le service d'inscription sera disponible.\nVérifier mon choix\nLire les conditions\n\nRÉCAPITULATIF\n\nVotre intention de don\nAffectation\nLe fonds général d'Amanah\nFréquence\nDon ponctuel\nMontant\n150 CHF\nDevise\nCHF\n\nLes frais éventuels et le prestataire devront être affichés ici avant paiement. Le serveur restera seul responsable de la validation finale.\n\nAPRÈS CETTE ÉTAPE\n\nUn parcours sans compte obligatoire.\n02\nCoordonnées minimales\n\nUniquement les informations nécessaires au paiement et à la confirmation.\n\n03\nPaiement hébergé\n\nRedirection vers un prestataire spécialisé, puis vérification sécurisée côté serveur.\n\n04\nÉtat confirmé\n\nUne page de retour claire, sans jamais confondre redirection et preuve de paiement.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "conditions-des-dons.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": [
+        {
+          "action": null,
+          "method": null
+        }
+      ]
+    },
+    {
+      "file": "faq.html",
+      "text": "Accueil\nQuestions fréquentes\n\nBESOIN D'UNE RÉPONSE ?\n\nQuestions fréquentes.\n\nLes réponses définitives sur la fiscalité, les remboursements et les frais seront publiées après validation juridique et opérationnelle.\n\nLES DONS\n\nPréparer et comprendre son don\nComment faire un don ?\nPuis-je choisir un projet ?\nPuis-je donner un montant libre ?\nLe don mensuel est-il disponible ?\n\nTRANSPARENCE ET DONNÉES\n\nSuivi et confidentialité\nComment l'utilisation des dons est-elle présentée ?\nQuelles données seront demandées ?\nLes dons sont-ils fiscalement déductibles ?\nUne autre question ?\n\nUtilisez la page de contact. Aucun message ne sera envoyé depuis cette maquette tant que l'adresse officielle et le backend ne sont pas configurés.\n\nAccéder au contact",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "contact.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "index.html",
+      "text": "AIDE HUMANITAIRE · SOLIDARITÉ EN ACTION\n\nEnsemble, apportons une aide concrète.\n\nAmanah construit une action humanitaire attentive aux besoins, respectueuse des personnes et transparente dans ses engagements.\n\nDécouvrir nos projets\nFaire un don\n\nLes lieux, projets et résultats seront publiés uniquement après validation par l'association.\n\nDIGNITÉ · PROXIMITÉ · CLARTÉ\nUne solidarité qui se construit avec soin.\nUn visuel de terrain autorisé remplacera cette composition lors de la publication.\n\nNOTRE APPROCHE\n\nAider avec justesse, du besoin au compte rendu.\n\nLe site présente un cadre clair pour comprendre qui agit, comment les projets sont choisis et comment les ressources sont suivies.\n\nDécouvrir l'association\n01\nÉcouter\n\nPartir des besoins documentés et du contexte des personnes concernées.\n\n02\nAgir\n\nPrésenter une action délimitée, ses responsabilités et son état d'avancement.\n\n03\nRendre compte\n\nPublier des informations datées et sourcées, sans promesse impossible à vérifier.\n\nPROJETS\n\nLes actions prioritaires\n\nChaque fiche présentera le besoin, le lieu publiable, le statut, le budget validé et les nouvelles du projet.\n\n⌁\n\nPUBLICATION EN PRÉPARATION\n\nLes premiers projets documentés seront bientôt présentés ici.\n\nAucun projet fictif n'est affiché. Amanah publiera uniquement les actions dont les informations et les médias auront été vérifiés.\n\nVoir l'espace projets\n\nTRANSPARENCE\n\nLa confiance se mérite.\n\nPas de chiffre sans période, pas de résultat sans source, pas de document sans date de mise à jour.\n\n01 · Gouvernance\nIdentifier les responsables\n\nLa structure, les rôles et les informations officielles seront accessibles au même endroit.\n\n02 · Affectation\nExpliquer l'usage des fonds\n\nChaque projet précisera les règles d'affectation, de suivi et de réaffectation applicables.\n\n03 · Documents\nPublier les références\n\nRapports et comptes publiables seront datés, téléchargeables et accompagnés de leur contexte.\n\nConsulter notre démarche\n\nSOUTENIR AMANAH\n\nChoisissez librement votre soutien.\n\nLes montants servent de repères. Aucune équivalence d'impact n'est avancée sans donnée vérifiée.\n\nPréparer mon don\nCHF\n50\nCHF\n150\nCHF\n250\n\nACTUALITÉS\n\nDes nouvelles documentées.\n\nDates, crédits, contexte et lien vers le projet concerné accompagneront chaque publication.\n\nACTUALITÉ À VENIR\nÉDITORIAL EN PRÉPARATION\nLes premières nouvelles d'Amanah seront publiées ici.\n\nCet espace n'utilise ni récit inventé, ni photographie tierce non autorisée.\n\nCE QUE VOUS TROUVEREZ\n\nDes mises à jour reliées aux projets.\n\nChaque nouvelle précisera son auteur, sa date et les informations vérifiables disponibles.\n\nVoir les actualités\n\nRESTER INFORMÉ\n\nUne newsletter, lorsque le service sera prêt.\n\nL'inscription ne sera proposée qu'après configuration d'un consentement explicite et d'une désinscription fiable.\n\nQUESTIONS FRÉQUENTES\n\nFaire un don en confiance.\nComment choisir l'affectation de mon don ?\nQuand le paiement sera-t-il disponible ?\nOù trouver les documents de l'association ?\nVoir toutes les questions",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            345.046875,
+            1254
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "faire-un-don.html",
+        "association.html",
+        "projets.html",
+        "transparence.html",
+        "faire-un-don.html",
+        "actualites.html",
+        "faq.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [
+        "og:title",
+        "og:description",
+        "og:type"
+      ],
+      "forms": []
+    },
+    {
+      "file": "mentions-legales.html",
+      "text": "Accueil\nMentions légales\n\nINFORMATIONS OFFICIELLES\n\nMentions légales.\n\nLes mentions définitives seront publiées lorsque l'identité et les coordonnées officielles auront été fournies.\n\nPage non finalisée. Les champs ci-dessous ne doivent pas être remplacés par des données supposées.\nÉditeur du site\n\nNom légal, forme, siège, registre et représentants : à confirmer par Amanah.\n\nContact\n\nAdresse e-mail et téléphone officiels : à confirmer.\n\nHébergement\n\nL'offre, l'entité contractante et les coordonnées de l'hébergeur seront reprises depuis le contrat effectif.\n\nResponsabilité et contenus\n\nLes règles de publication, les crédits et les modalités de signalement seront finalisés avant mise en ligne.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "index.html",
+        "contact.html",
+        "confidentialite.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "projets.html",
+      "text": "Accueil\nProjets\n\nNOS ACTIONS\n\nDes projets lisibles, suivis et documentés.\n\nChaque projet publié présentera son besoin, son périmètre, son statut et les informations financières disponibles.\n\nPROJETS PUBLIÉS\n\nAucune action fictive.\n\nLes filtres apparaîtront uniquement si le nombre de projets le justifie.\n\n⌁\nLes projets sont en cours de préparation éditoriale.\n\nAmanah doit encore valider les lieux publiables, les objectifs, les responsables, les budgets et les médias. Leur absence ici protège la fiabilité du site.\n\nSoutenir le fonds général\nComprendre la démarche\n\nANATOMIE D'UNE FICHE\n\nCe que chaque projet expliquera.\nCONTEXTE\nLe besoin et le lieu public\n\nUn résumé vérifiable, une zone géographique adaptée à la protection des personnes et des dates utiles.\n\nACTION\nLes objectifs et le statut\n\nLa réponse prévue, le responsable interne et un statut opérationnel distinct de la publication.\n\nSUIVI\nLe budget et les nouvelles\n\nUne méthode de calcul explicite, des mises à jour datées et une politique d'affectation claire.",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "faire-un-don.html",
+        "association.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    },
+    {
+      "file": "transparence.html",
+      "text": "Accueil\nTransparence\n\nNOTRE ENGAGEMENT\n\nExpliquer avant d'affirmer.\n\nAmanah prévoit un espace unique pour rendre accessibles sa gouvernance, ses règles d'affectation et ses documents publiables.\n\nUne méthode de publication exigeante\n\nLes chiffres ne seront affichés qu'avec une période, une source, une date de mise à jour et une définition compréhensible. Les montants collectés distingueront, si nécessaire, paiements confirmés, remboursements et fonds effectivement versés.\n\nUtilisation et affectation des fonds\n\nAvant l'ouverture des dons, Amanah doit valider les règles applicables au fonds général, aux projets terminés, aux objectifs dépassés et aux éventuelles réaffectations. Le choix du donateur ne sera jamais modifié silencieusement.\n\nRessources documentaires\nORG\nOrganisation et gouvernance\n\nIdentité officielle, rôles et responsables.\n\nÀ publier\nRAP\nRapports d'activité\n\nDocuments datés et contexte de lecture.\n\nÀ publier\nFIN\nComptes publiables\n\nPériode, périmètre et méthode des indicateurs.\n\nÀ publier\nIndicateurs\nAucun chiffre n'est affiché dans cette maquette.\nLes données de collecte et d'impact seront ajoutées seulement lorsqu'une source, une méthode de calcul et une fréquence de mise à jour auront été validées.\n\nSUR CETTE PAGE\n\nMéthode\nAffectation des fonds\nDocuments\nIndicateurs\nConditions des dons",
+      "images": [
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            86,
+            86
+          ]
+        },
+        {
+          "src": "logo.jpeg",
+          "natural": [
+            1254,
+            1254
+          ],
+          "rendered": [
+            150,
+            1254
+          ]
+        }
+      ],
+      "links": [
+        "#contenu",
+        "index.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "projets.html",
+        "association.html",
+        "transparence.html",
+        "actualites.html",
+        "faire-un-don.html",
+        "index.html",
+        "#methode",
+        "#fonds",
+        "#documents",
+        "#indicateurs",
+        "conditions-des-dons.html",
+        "projets.html",
+        "association.html",
+        "actualites.html",
+        "faq.html",
+        "transparence.html",
+        "conditions-des-dons.html",
+        "confidentialite.html",
+        "mentions-legales.html",
+        "contact.html",
+        "faire-un-don.html"
+      ],
+      "canonical": null,
+      "robots": null,
+      "og": [],
+      "forms": []
+    }
+  ],
+  "colors": [
+    {
+      "text": "Pas de chiffre sans période, pas de résultat sans source, pas de document sans date de mise à jour.",
+      "color": "rgb(82, 96, 86)",
+      "background": "rgb(36, 50, 41)",
+      "size": "17px",
+      "weight": "400",
+      "contrast": 2.0254249496988
+    },
+    {
+      "text": "Récapitulatif",
+      "color": "rgb(101, 114, 94)",
+      "background": "rgb(36, 50, 41)",
+      "size": "12.32px",
+      "weight": "750",
+      "contrast": 2.636708245169389
+    },
+    {
+      "text": "Coordonnées",
+      "color": "rgb(101, 114, 94)",
+      "background": "rgb(36, 50, 41)",
+      "size": "12.32px",
+      "weight": "750",
+      "contrast": 2.636708245169389
+    }
+  ],
+  "broken": []
+}

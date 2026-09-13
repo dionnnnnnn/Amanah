@@ -2,9 +2,15 @@
 .claude-flow/
 .codex/
 .agents/
+.swarm/
 
 # Common local environment files
 .env
 .env.*
 !.env.example
 
+# Generated packages and operating-system files
+/dist/
+Thumbs.db
+.DS_Store
+__pycache__/

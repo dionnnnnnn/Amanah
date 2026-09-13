@@ -1,0 +1,15 @@
+{
+    "first_confirmation": true,
+    "status_before_resubscribe": "subscribed",
+    "status_after_resubscribe": "pending",
+    "new_unsubscribe_token_matches_database": false,
+    "old_unsubscribe_token_matches_database": true,
+    "second_confirmation": true,
+    "new_token_unsubscribe_result": false,
+    "status_after_new_token_unsubscribe": "subscribed",
+    "old_token_unsubscribe_result": true,
+    "outbox_count_after_third_subscription": 3,
+    "outbox_distinct_dedupe_keys": 3,
+    "all_checks_local": true,
+    "emails_sent": 0
+}

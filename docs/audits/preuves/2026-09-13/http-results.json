@@ -1,0 +1,24 @@
+[
+  {
+    "case": "original_up",
+    "status": 200,
+    "classFailure": true,
+    "emptyBody": false
+  },
+  {
+    "case": "csrf_get_with_autoload_shim",
+    "status": 200,
+    "cookieNames": [
+      "PHPSESSID"
+    ]
+  },
+  {
+    "case": "csrf_post_with_same_cookie_jar",
+    "status": 500,
+    "body": "{\"error\":\"Une erreur interne est survenue.\"}",
+    "cookieNames": [
+      "PHPSESSID",
+      "amanah_session"
+    ]
+  }
+]

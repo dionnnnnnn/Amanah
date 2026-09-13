@@ -1,0 +1,10 @@
+{"case":"checkout_changed_amount_other_session","same_reference":true,"stored_cents":5000}
+{"case":"checkout_retry_timeout","gateway_calls":1,"retry":{"reference":"AM-369AFEBD1C83AD38","checkout_url":null,"status":"pending"}}
+{"case":"webhook_unpaid_no_amount_currency_live_event_test_config","donation":{"status":"paid"},"ledger_count":1}
+{"case":"pending_refund","response":{"refund_id":"9a2ecbb4-0888-4801-aaf3-8117fd0d5011","status":"pending"},"donation_status":"refunded","ledger_net":0}
+{"case":"full_refund_retry","exception":"Ce don ne peut pas \u00eatre rembours\u00e9."}
+{"case":"newsletter_resubmit","before":"subscribed","after":"pending","new_unsubscribe_token_valid":false}
+{"case":"webhook_exact_duplicate_control","duplicate":true,"ledger_count":1}
+{"case":"webhook_mismatch_control","exception":"Montant webhook incoh\u00e9rent.","status":"pending","persisted_events":0}
+{"case":"suspended_project_checkout","result":"pending","project_id":"p1"}
+{"case":"pending_refunds_over_total","donation_cents":5000,"refunds_requested_cents":6000,"ledger_net":-1000}

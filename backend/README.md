@@ -1,6 +1,6 @@
 # Backend Amanah
 
-Fondation PHP 8.3 autonome, sans modification du prototype frontend. Elle suit le plan de refonte : données éditoriales séparées, dons en centimes, checkout hébergé via un adaptateur, webhook signé et idempotent, newsletter double opt-in, contact, rôles d'administration et jobs différés.
+Fondation PHP 8.3 autonome. Le code reste privé dans `backend/` ; le point d'entrée HTTP est `../public/index.php`. Le frontend et cette fondation nécessitent encore une intégration et une recette métier avant ouverture au public.
 
 ## Démarrage local
 
@@ -16,7 +16,9 @@ composer serve
 
 Pour MySQL/MariaDB, définir `DB_DSN` avec le DSN PDO du serveur et exécuter `database/schema.sql` sur une base neuve avec la version réellement utilisée par l'hébergeur. Le fichier est une migration d'installation initiale : les évolutions doivent être ajoutées dans des migrations versionnées et testées sur le moteur cible.
 
-Le dépôt actuel ne contient pas PHP/Composer dans le PATH ; les commandes ci-dessus sont donc à exécuter sur l'environnement de développement ou Infomaniak.
+PHP, Composer et sqlite3 doivent être disponibles pour ces commandes. `composer serve`, lancé depuis ce dossier, sert `../public/` avec le routeur local `../tools/router.php`. Depuis la racine du dépôt, utiliser `composer --working-dir=backend serve`. Les tests se lancent avec `composer test` depuis ce dossier ; les assertions y sont activées explicitement.
+
+Créer les dossiers `storage/private` et `storage/logs` si nécessaire. Leur contenu ne doit pas être versionné. Ne jamais utiliser le serveur PHP intégré en production. Voir [le guide de déploiement](../docs/DEPLOIEMENT_INFOMANIAK.md).
 
 ## Routes backend
 

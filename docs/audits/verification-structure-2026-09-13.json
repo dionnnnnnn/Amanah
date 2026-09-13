@@ -1,0 +1,139 @@
+{
+  "pages": 14,
+  "local_links_checked": 306,
+  "missing_links": [],
+  "php_files": 27,
+  "php_errors": [],
+  "http": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/404.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/actualites.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/association.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/conditions-des-dons.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/confidentialite.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/contact.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/don-annulation.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/don-retour.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/faire-un-don.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/faq.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/mentions-legales.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/projets.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/transparence.html",
+      "status": 200,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/assets/css/styles.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8"
+    },
+    {
+      "path": "/assets/js/app.js",
+      "status": 200,
+      "type": "application/javascript"
+    },
+    {
+      "path": "/assets/images/logo.jpeg",
+      "status": 200,
+      "type": "image/jpeg"
+    },
+    {
+      "path": "/up",
+      "status": 200,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/session/csrf",
+      "status": 200,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/backend/.env",
+      "status": 403,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/docs/README.md",
+      "status": 404,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/archive/prototypes/Amanah.html",
+      "status": 404,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/.git/config",
+      "status": 403,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/.htaccess",
+      "status": 403,
+      "type": "text/html; charset=UTF-8"
+    },
+    {
+      "path": "/missing-route",
+      "status": 404,
+      "type": "application/json; charset=utf-8"
+    }
+  ]
+}

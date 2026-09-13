@@ -1,0 +1,47 @@
+{
+    "rate_UTC": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false
+    ],
+    "rate_Europe/Zurich": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+    ],
+    "jobs_success": {
+        "processed": 1,
+        "available": 1
+    },
+    "jobs_second_pass": {
+        "processed": 0,
+        "available": 0
+    },
+    "intercepted_messages": [
+        {
+            "kind": "Amanah \u2014 confirmez votre inscription",
+            "confirmation_link": true,
+            "unsubscribe_link": false
+        }
+    ],
+    "failed_first": {
+        "status": "pending",
+        "attempts": 1
+    },
+    "failed_fifth": {
+        "status": "failed",
+        "attempts": 5
+    },
+    "failed_jobs": 1,
+    "login_without_mfa": true,
+    "revoked_denied": true,
+    "real_emails_sent": 0
+}
