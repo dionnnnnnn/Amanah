@@ -22,15 +22,16 @@ jobs:
       - name: Préparer SSH
         env:
           INFOMANIAK_SSH_KEY: ${{ secrets.INFOMANIAK_SSH_KEY }}
-          INFOMANIAK_KNOWN_HOSTS: ${{ secrets.INFOMANIAK_KNOWN_HOSTS }}
+          INFOMANIAK_HOST: ${{ secrets.INFOMANIAK_HOST }}
         run: |
           set -eu
           test -n "$INFOMANIAK_SSH_KEY"
-          test -n "$INFOMANIAK_KNOWN_HOSTS"
+          test -n "$INFOMANIAK_HOST"
           install -d -m 700 ~/.ssh
           printf '%s\n' "$INFOMANIAK_SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          printf '%s\n' "$INFOMANIAK_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh-keyscan -t ed25519 "$INFOMANIAK_HOST" > ~/.ssh/known_hosts 2>/dev/null
+          test -s ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
       - name: Pousser le commit vers le dépôt Infomaniak
