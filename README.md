@@ -35,4 +35,4 @@ Ouvrir `http://127.0.0.1:8080/`. Les chemins des ressources partent de la racine
 
 Cette organisation prépare le déploiement mais ne valide pas à elle seule la mise en production fonctionnelle. Les pages de démonstration et le backend doivent encore être raccordés et les fonctionnalités métier validées ; un adaptateur de paiement réel reste nécessaire. Ne pas ouvrir une collecte avec le driver de test.
 
-Voir [le guide Infomaniak](docs/DEPLOIEMENT_INFOMANIAK.md), [la documentation](docs/README.md) et [le compte rendu du rangement](docs/REORGANISATION_WORKSPACE.md). L'audit conservé porte sur une révision antérieure aux dernières corrections : il constitue une référence historique, pas une certification de l'état actuel.
+Voir [le guide Infomaniak](docs/DEPLOIEMENT_INFOMANIAK_SSH.md), [la documentation](docs/README.md) et [le compte rendu du rangement](docs/REORGANISATION_WORKSPACE.md). L'audit conservé porte sur une révision antérieure aux dernières corrections : il constitue une référence historique, pas une certification de l'état actuel.

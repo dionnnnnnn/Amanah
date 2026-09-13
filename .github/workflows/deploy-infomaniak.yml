@@ -1,0 +1,93 @@
+name: Déployer sur Infomaniak
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: infomaniak-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Préparer SSH
+        env:
+          INFOMANIAK_SSH_KEY: ${{ secrets.INFOMANIAK_SSH_KEY }}
+          INFOMANIAK_KNOWN_HOSTS: ${{ secrets.INFOMANIAK_KNOWN_HOSTS }}
+        run: |
+          set -eu
+          test -n "$INFOMANIAK_SSH_KEY"
+          test -n "$INFOMANIAK_KNOWN_HOSTS"
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$INFOMANIAK_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$INFOMANIAK_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Pousser le commit vers le dépôt Infomaniak
+        env:
+          INFOMANIAK_USER: ${{ secrets.INFOMANIAK_USER }}
+          INFOMANIAK_HOST: ${{ secrets.INFOMANIAK_HOST }}
+          INFOMANIAK_REPO_PATH: ${{ secrets.INFOMANIAK_REPO_PATH }}
+        run: |
+          set -eu
+          test -n "$INFOMANIAK_USER"
+          test -n "$INFOMANIAK_HOST"
+          test -n "$INFOMANIAK_REPO_PATH"
+          git remote add infomaniak "ssh://${INFOMANIAK_USER}@${INFOMANIAK_HOST}${INFOMANIAK_REPO_PATH}"
+          git push infomaniak HEAD:main
+
+      - name: Publier la version reçue
+        env:
+          INFOMANIAK_USER: ${{ secrets.INFOMANIAK_USER }}
+          INFOMANIAK_HOST: ${{ secrets.INFOMANIAK_HOST }}
+          INFOMANIAK_REPO_PATH: ${{ secrets.INFOMANIAK_REPO_PATH }}
+          INFOMANIAK_TARGET_DIR: ${{ secrets.INFOMANIAK_TARGET_DIR }}
+          DEPLOY_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          test -n "$INFOMANIAK_TARGET_DIR"
+          ssh "${INFOMANIAK_USER}@${INFOMANIAK_HOST}" bash -s -- "$INFOMANIAK_REPO_PATH" "$INFOMANIAK_TARGET_DIR" "$DEPLOY_SHA" <<'REMOTE'
+          set -eu
+          repo_path="$1"
+          target_dir="$2"
+          deploy_sha="$3"
+          home_dir="$(cd ~ && pwd)"
+          staging_dir="$home_dir/.deploy/amanah-$deploy_sha"
+          previous_dir="$home_dir/.deploy/amanah-previous"
+          mkdir -p "$home_dir/.deploy"
+          rm -rf "$staging_dir"
+          git clone --depth 1 --branch main "$repo_path" "$staging_dir"
+          git -C "$staging_dir" rev-parse --verify "$deploy_sha^{commit}" >/dev/null
+          if [ -d "$target_dir" ]; then
+            rm -rf "$previous_dir"
+            mkdir -p "$previous_dir"
+            rsync -a --exclude='backend/.env' --exclude='backend/storage/' "$target_dir/" "$previous_dir/"
+          fi
+          mkdir -p "$target_dir"
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='.claude-flow/' \
+            --exclude='.codex/' \
+            --exclude='.agents/' \
+            --exclude='.swarm/' \
+            --exclude='archive/' \
+            --exclude='docs/' \
+            --exclude='tools/' \
+            --exclude='backend/tests/' \
+            --exclude='backend/.env' \
+            --exclude='backend/storage/' \
+            "$staging_dir/" "$target_dir/"
+          rm -rf "$staging_dir"
+          printf 'Déploiement Amanah %s terminé.\n' "$deploy_sha"
+          REMOTE
