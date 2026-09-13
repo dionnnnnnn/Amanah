@@ -6,6 +6,26 @@ namespace Amanah\Security;
 
 final class Totp
 {
+    public static function generateSecret(int $bytes = 20): string
+    {
+        $alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+        $binary = random_bytes($bytes);
+        $bits = '';
+        foreach (str_split($binary) as $byte) $bits .= str_pad(decbin(ord($byte)), 8, '0', STR_PAD_LEFT);
+        $secret = '';
+        foreach (str_split($bits, 5) as $chunk) $secret .= $alphabet[bindec(str_pad($chunk, 5, '0'))];
+        return $secret;
+    }
+
+    public static function encryptSecret(string $secret, string $appKey): string
+    {
+        $key = hash('sha256', $appKey, true);
+        $iv = random_bytes(16);
+        $cipher = openssl_encrypt($secret, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+        if ($cipher === false) throw new \RuntimeException('Chiffrement MFA indisponible.');
+        return base64_encode($iv) . ':' . base64_encode($cipher);
+    }
+
     public static function valid(string $secret, string $code, int $window = 1): bool
     {
         $code = preg_replace('/\s+/', '', $code) ?? '';

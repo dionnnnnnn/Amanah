@@ -12,6 +12,6 @@
   },
   "scripts": {
     "serve": "php -S 127.0.0.1:8080 -t public public/index.php",
-    "test": "php tests/SmokeTest.php"
+    "test": "php -d zend.assertions=1 -d assert.exception=1 tests/SmokeTest.php"
   }
 }

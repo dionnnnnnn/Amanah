@@ -14,7 +14,7 @@ php bin/seed.php
 composer serve
 ```
 
-Pour MySQL/MariaDB, définir `DB_DSN` avec le DSN PDO du serveur et exécuter le même `database/schema.sql` via le client SQL ; le schéma n'utilise pas d'identifiants auto-incrémentés afin de rester portable.
+Pour MySQL/MariaDB, définir `DB_DSN` avec le DSN PDO du serveur et exécuter `database/schema.sql` sur une base neuve avec la version réellement utilisée par l'hébergeur. Le fichier est une migration d'installation initiale : les évolutions doivent être ajoutées dans des migrations versionnées et testées sur le moteur cible.
 
 Le dépôt actuel ne contient pas PHP/Composer dans le PATH ; les commandes ci-dessus sont donc à exécuter sur l'environnement de développement ou Infomaniak.
 

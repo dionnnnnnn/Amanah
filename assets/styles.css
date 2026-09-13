@@ -39,7 +39,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
 button, input, select, textarea { font: inherit; }
 button { color: inherit; }
@@ -233,6 +233,8 @@ p { margin-bottom: 1.25rem; }
 
 .don-layout { display: grid; grid-template-columns: minmax(0, 1fr) 350px; align-items: start; gap: 2rem; }
 .don-summary { position: sticky; top: 110px; padding: 1.5rem; color: var(--white); background: var(--forest-900); border-radius: var(--radius); }
+.don-summary .eyebrow { color: #d7ded3; }
+.don-summary .tiny { color: #e0e6dd; }
 .don-summary h2 { font-size: 1.45rem; }
 .summary-list { display: grid; gap: 0.8rem; margin: 1.5rem 0; }
 .summary-row { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.17); }

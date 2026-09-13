@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Amanah\Services;
 
 use Amanah\Infrastructure\Database;
+use Amanah\Http\HttpException;
 use Amanah\Security\Totp;
 use Amanah\Security\RateLimiter;
+use Amanah\Security\Session;
 use Amanah\Support\Clock;
 use RuntimeException;
 
@@ -18,20 +20,19 @@ final class AdminAuthService
 
     public function login(string $email, string $password, ?string $mfaCode, string $ip): void
     {
-        if (!$this->limiter->allow('admin-login:' . hash('sha256', $ip), 10, 900)) {
-            throw new RuntimeException('Trop de tentatives. Réessayez plus tard.');
-        }
+        $this->limiter->requireAllowed('admin-login:' . hash('sha256', $ip), 10, 900);
         $user = $this->database->fetchOne('SELECT * FROM users WHERE email = :email AND status = \'active\'',
             ['email' => strtolower(trim($email))]);
         if (!$user || !password_verify($password, $user['password_hash'])) {
-            throw new RuntimeException('Identifiants invalides.');
+            throw new HttpException('Identifiants invalides.', 401);
         }
-        if ($user['mfa_secret_encrypted'] !== null && !Totp::valid($this->decrypt($user['mfa_secret_encrypted']), (string) $mfaCode)) {
-            throw new RuntimeException('Code MFA invalide.');
+        if ($user['mfa_secret_encrypted'] === null) {
+            throw new HttpException('Ce compte doit être enrôlé en MFA avant toute connexion.', 403);
         }
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start(['cookie_httponly' => true, 'cookie_secure' => $this->isHttps(), 'cookie_samesite' => 'Lax']);
+        if (!Totp::valid($this->decrypt($user['mfa_secret_encrypted']), (string) $mfaCode)) {
+            throw new HttpException('Code MFA invalide.', 401);
         }
+        Session::start();
         session_regenerate_id(true);
         $_SESSION['admin_id'] = $user['id'];
         $_SESSION['admin_roles'] = array_column($this->database->fetchAll(
@@ -43,26 +44,21 @@ final class AdminAuthService
 
     public function requireRole(string ...$roles): string
     {
-        if (session_status() !== PHP_SESSION_ACTIVE) {
-            session_start(['cookie_httponly' => true, 'cookie_secure' => $this->isHttps(), 'cookie_samesite' => 'Lax']);
-        }
+        Session::start();
         $userId = (string) ($_SESSION['admin_id'] ?? '');
         $actual = array_column($this->database->fetchAll(
             'SELECT r.name FROM roles r JOIN role_user ru ON ru.role_id = r.id WHERE ru.user_id = :id', ['id' => $userId]
         ), 'name');
         $active = $userId !== '' && $this->database->fetchOne('SELECT id FROM users WHERE id = :id AND status = \'active\'', ['id' => $userId]);
         if (!$active || !array_intersect($roles, $actual)) {
-            throw new RuntimeException('Accès administrateur requis.');
+            throw new HttpException('Accès administrateur requis.', 403);
         }
         return $userId;
     }
 
     public function logout(): void
     {
-        $_SESSION = [];
-        if (session_status() === PHP_SESSION_ACTIVE) {
-            session_destroy();
-        }
+        Session::destroy();
     }
 
     private function decrypt(string $value): string
@@ -77,8 +73,4 @@ final class AdminAuthService
         return $plain;
     }
 
-    private function isHttps(): bool
-    {
-        return !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
-    }
 }

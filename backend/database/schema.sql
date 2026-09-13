@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS pages (
     editorial_status VARCHAR(20) NOT NULL DEFAULT 'draft',
     published_at TEXT NULL,
     author_id CHAR(36) NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
     FOREIGN KEY (author_id) REFERENCES users(id)
 );
 CREATE TABLE IF NOT EXISTS page_revisions (
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS faqs (
 );
 CREATE TABLE IF NOT EXISTS media (
     id CHAR(36) PRIMARY KEY,
-    storage_path TEXT NOT NULL UNIQUE,
+    storage_path VARCHAR(768) NOT NULL UNIQUE,
     mime_type VARCHAR(100) NOT NULL,
     width INTEGER NULL,
     height INTEGER NULL,
@@ -152,17 +152,18 @@ CREATE TABLE IF NOT EXISTS donations (
     status VARCHAR(20) NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','paid','failed','canceled','refunded','disputed')),
     provider_subscription_id VARCHAR(255) NULL,
     donor_snapshot TEXT NOT NULL,
-    paid_at TEXT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL,
+    paid_at DATETIME NULL,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
     FOREIGN KEY (donor_id) REFERENCES donors(id),
     FOREIGN KEY (project_id) REFERENCES projects(id)
 );
-CREATE INDEX IF NOT EXISTS donations_status_created_idx ON donations(status, created_at);
+CREATE INDEX donations_status_created_idx ON donations(status, created_at);
 CREATE TABLE IF NOT EXISTS payment_attempts (
     id CHAR(36) PRIMARY KEY,
     donation_id CHAR(36) NOT NULL,
     idempotency_key VARCHAR(128) NOT NULL UNIQUE,
+    session_id VARCHAR(128) NOT NULL,
     provider VARCHAR(40) NOT NULL,
     provider_session_id VARCHAR(255) NULL UNIQUE,
     provider_payment_id VARCHAR(255) NULL UNIQUE,

@@ -76,8 +76,11 @@ final class JobRunner
         $headers = ['From: ' . $from, 'Content-Type: text/plain; charset=UTF-8'];
         if ($message['kind'] === 'newsletter.confirmation') {
             $subscriber = $this->database->fetchOne('SELECT email FROM newsletter_subscribers WHERE id = :id', ['id' => $payload['subscriber_id']]);
-            $body = "Confirmez votre inscription à la newsletter Amanah :\n" . ($this->config['url'] ?? '')
-                . '/newsletter/confirmer/' . rawurlencode((string) $payload['confirmation_token']);
+            $baseUrl = rtrim((string) ($this->config['url'] ?? ''), '/');
+            $body = "Confirmez votre inscription à la newsletter Amanah :\n" . $baseUrl
+                . '/newsletter/confirmer/' . rawurlencode((string) $payload['confirmation_token'])
+                . "\n\nVous pouvez vous désinscrire à tout moment :\n" . $baseUrl
+                . '/newsletter/desinscription/' . rawurlencode((string) $payload['unsubscribe_token']);
             $to = (string) ($subscriber['email'] ?? '');
             $subject = 'Amanah — confirmez votre inscription';
         } elseif ($message['kind'] === 'donation.confirmed') {

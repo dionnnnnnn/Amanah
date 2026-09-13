@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Amanah\Infrastructure\Database;
-use PDO;
+use Amanah\Http\HttpException;
 
 $projectDir = dirname(__DIR__);
 if (is_file($projectDir . '/.env')) {
@@ -36,8 +36,17 @@ if (is_file($projectDir . '/vendor/autoload.php')) {
 }
 
 $config = require $projectDir . '/config/app.php';
+$required = ['APP_KEY' => $config['key'], 'PAYMENT_WEBHOOK_SECRET' => $config['webhook_secret']];
+if ($config['env'] !== 'local') {
+    foreach ($required as $name => $value) {
+        if ($value === '' || str_contains($value, 'replace-me') || str_contains($value, 'replace-with')) {
+            throw new HttpException('Configuration serveur incomplète: ' . $name, 500);
+        }
+    }
+}
+date_default_timezone_set('UTC');
 $dsn = getenv('DB_DSN') ?: 'sqlite:' . $projectDir . '/storage/database.sqlite';
 $dsn = str_replace('%kernel.project_dir%', $projectDir, $dsn);
-$database = new Database(new PDO($dsn, getenv('DB_USER') ?: null, getenv('DB_PASSWORD') ?: null));
+$database = new Database(new \PDO($dsn, getenv('DB_USER') ?: null, getenv('DB_PASSWORD') ?: null));
 
 return [$config, $database];

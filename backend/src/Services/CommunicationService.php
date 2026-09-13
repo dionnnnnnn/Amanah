@@ -21,9 +21,7 @@ final class CommunicationService
         if ((string) ($input['website'] ?? '') !== '') {
             throw new InvalidArgumentException('Demande refusée.');
         }
-        if (!$this->limiter->allow('contact:' . hash('sha256', $ip), 5, 3600)) {
-            throw new InvalidArgumentException('Trop de demandes. Réessayez plus tard.');
-        }
+        $this->limiter->requireAllowed('contact:' . hash('sha256', $ip), 5, 3600);
         $email = strtolower(trim((string) ($input['email'] ?? '')));
         $message = trim((string) ($input['message'] ?? ''));
         if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $message === '' || strlen($message) > 10000) {
@@ -46,14 +44,18 @@ final class CommunicationService
     public function subscribe(string $email, string $ip): string
     {
         $email = strtolower(trim($email));
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !$this->limiter->allow('newsletter:' . hash('sha256', $ip), 5, 3600)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException('Inscription impossible pour le moment.');
         }
+        $this->limiter->requireAllowed('newsletter:' . hash('sha256', $ip), 5, 3600);
         $confirmationToken = bin2hex(random_bytes(32));
         $unsubscribeToken = bin2hex(random_bytes(32));
         $now = Clock::now();
         $existing = $this->database->fetchOne('SELECT * FROM newsletter_subscribers WHERE email = :email', ['email' => $email]);
         if ($existing && $existing['status'] === 'suppressed') {
+            return '';
+        }
+        if ($existing && $existing['status'] === 'subscribed') {
             return '';
         }
         $id = $existing['id'] ?? Uuid::v4();
@@ -62,7 +64,7 @@ final class CommunicationService
         if ($existing) {
             $this->database->execute(
                 'UPDATE newsletter_subscribers SET status = \'pending\', confirmation_token_hash = :hash,
-                 unsubscribe_token_hash = COALESCE(unsubscribe_token_hash, :unsubscribe_hash),
+                 unsubscribe_token_hash = :unsubscribe_hash,
                  token_expires_at = :expires, updated_at = :now WHERE id = :id',
                 ['hash' => $hash, 'unsubscribe_hash' => hash('sha256', $unsubscribeToken), 'expires' => $expires, 'now' => $now, 'id' => $id]
             );
@@ -150,6 +152,6 @@ final class CommunicationService
     private function short(mixed $value, int $length): ?string
     {
         $value = trim((string) ($value ?? ''));
-        return $value === '' ? null : substr($value, 0, $length);
+        return $value === '' ? null : mb_substr($value, 0, $length);
     }
 }

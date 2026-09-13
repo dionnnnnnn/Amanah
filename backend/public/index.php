@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Amanah\Http\Request;
 use Amanah\Http\Response;
+use Amanah\Http\HttpException;
 use Amanah\Security\Csrf;
 use Amanah\Security\RateLimiter;
+use Amanah\Security\Session;
 use Amanah\Services\AdminAuthService;
 use Amanah\Services\CommunicationService;
 use Amanah\Services\DonationService;
@@ -14,10 +16,13 @@ use Amanah\Services\JobRunner;
 use Amanah\Services\RefundService;
 use Amanah\Services\UnavailablePaymentGateway;
 use Amanah\Services\WebhookService;
-use InvalidArgumentException;
-use Throwable;
 
-[$config, $database] = require dirname(__DIR__) . '/src/bootstrap.php';
+try {
+    [$config, $database] = require dirname(__DIR__) . '/src/bootstrap.php';
+} catch (Throwable $exception) {
+    error_log($exception->getMessage());
+    Response::json(['error' => 'Configuration serveur invalide.'], 500);
+}
 
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
@@ -25,19 +30,11 @@ header('Referrer-Policy: no-referrer');
 header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
 
 $request = new Request();
-$startSession = static function (): void {
-    if (session_status() !== PHP_SESSION_ACTIVE) {
-        session_name('amanah_session');
-        session_start([
-            'cookie_httponly' => true,
-            'cookie_secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
-            'cookie_samesite' => 'Lax',
-        ]);
-    }
-};
-$csrf = static function () use ($startSession): void {
+$startSession = static fn (): void => Session::start();
+$csrf = static function () use ($startSession, $request): void {
     $startSession();
-    Csrf::verify($_SERVER['HTTP_X_CSRF_TOKEN'] ?? $_POST['_csrf'] ?? null);
+    $token = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? $request->input('_csrf');
+    Csrf::verify(is_string($token) ? $token : null);
 };
 $sessionId = static function () use ($startSession): string {
     $startSession();
@@ -47,9 +44,10 @@ $jsonBody = static function (Request $request): array {
     return $request->body();
 };
 $gateway = $config['payment_driver'] === 'fake' ? new FakePaymentGateway() : new UnavailablePaymentGateway();
+$limiter = new RateLimiter($database);
 $donations = new DonationService($database, $gateway, $config['payment_mode'], $config['url'], $config['allow_recurring']);
-$communication = new CommunicationService($database, new RateLimiter($database));
-$auth = new AdminAuthService($database, $config['key'], new RateLimiter($database));
+$communication = new CommunicationService($database, $limiter);
+$auth = new AdminAuthService($database, $config['key'], $limiter);
 
 try {
     $method = $request->method();
@@ -63,6 +61,7 @@ try {
     }
     if ($method === 'POST' && $path === '/dons/checkout') {
         $csrf();
+        $limiter->requireAllowed('checkout:' . hash('sha256', $request->ip()), 30, 3600);
         $input = $jsonBody($request);
         $key = $request->header('Idempotency-Key') ?: ($input['idempotency_key'] ?? '');
         $input['idempotency_key'] = $key;
@@ -71,6 +70,7 @@ try {
         Response::json($result, 201);
     }
     if ($method === 'GET' && ($path === '/don/retour' || preg_match('#^/dons/([^/]+)/statut$#', $path, $match))) {
+        $limiter->requireAllowed('don-status:' . hash('sha256', $request->ip()), 60, 3600);
         $reference = $match[1] ?? (string) $request->input('reference', '');
         $startSession();
         if ($reference === '' || !in_array($reference, $_SESSION['donation_references'] ?? [], true)) {
@@ -98,7 +98,11 @@ try {
     }
     if (preg_match('#^/newsletter/confirmer/([a-f0-9]{64})$#', $path, $match)) {
         if ($method === 'GET') {
-            Response::json(['message' => 'Confirmez votre inscription avec une requête POST.']);
+            $csrfToken = htmlspecialchars(Csrf::token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+            Response::html('<!doctype html><meta charset="utf-8"><title>Confirmation newsletter — Amanah</title>'
+                . '<h1>Confirmer votre inscription</h1><p>Un clic suffit pour confirmer votre adresse.</p>'
+                . '<form method="post"><input type="hidden" name="_csrf" value="' . $csrfToken . '">'
+                . '<button type="submit">Confirmer mon inscription</button></form>');
         }
         if ($method === 'POST') {
             $csrf();
@@ -107,7 +111,11 @@ try {
     }
     if (preg_match('#^/newsletter/desinscription/([a-f0-9]{64})$#', $path, $match)) {
         if ($method === 'GET') {
-            Response::json(['message' => 'Confirmez votre désinscription avec une requête POST.']);
+            $csrfToken = htmlspecialchars(Csrf::token(), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+            Response::html('<!doctype html><meta charset="utf-8"><title>Désinscription newsletter — Amanah</title>'
+                . '<h1>Se désinscrire</h1><p>Vous ne recevrez plus les actualités d’Amanah.</p>'
+                . '<form method="post"><input type="hidden" name="_csrf" value="' . $csrfToken . '">'
+                . '<button type="submit">Confirmer ma désinscription</button></form>');
         }
         if ($method === 'POST') {
             $csrf();
@@ -128,6 +136,7 @@ try {
         Response::json(['authenticated' => true]);
     }
     if ($method === 'POST' && $path === '/admin/logout') {
+        $csrf();
         $auth->requireRole('administrator', 'editor', 'finance', 'support');
         $auth->logout();
         Response::json(['authenticated' => false]);
@@ -144,10 +153,12 @@ try {
     }
 
     Response::json(['error' => 'Route introuvable.'], 404);
-} catch (InvalidArgumentException $exception) {
+} catch (HttpException $exception) {
+    Response::json(['error' => $config['debug'] ? $exception->getMessage() : $exception->getMessage()], $exception->status);
+} catch (\InvalidArgumentException $exception) {
     Response::json(['error' => $exception->getMessage()], 422);
-} catch (Throwable $exception) {
+} catch (\Throwable $exception) {
     error_log($exception->getMessage());
-    $status = str_contains($exception->getMessage(), 'non autorisé') || str_contains($exception->getMessage(), 'requis') ? 403 : 500;
+    $status = $exception->getCode() >= 400 && $exception->getCode() < 600 ? $exception->getCode() : 500;
     Response::json(['error' => $config['debug'] ? $exception->getMessage() : 'Une erreur interne est survenue.'], $status);
 }

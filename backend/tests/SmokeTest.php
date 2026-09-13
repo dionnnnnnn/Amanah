@@ -16,6 +16,8 @@ use Amanah\Security\Totp;
 $money = Money::fromDecimal('150.50');
 assert($money->cents === 15050);
 assert($money->decimal() === '150.50');
+assert(Money::fromDecimal('1.10')->cents === 110);
+assert(Money::fromDecimal('4.10')->cents === 410);
 foreach (['0', '-1', '10.123', 'abc', '1000000000'] as $invalid) {
     try {
         Money::fromDecimal($invalid);
